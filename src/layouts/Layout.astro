@@ -3,7 +3,7 @@ interface Props {
 	title: string;
 }
 
-const { title } = Astro.props;
+const { title= "Hola ASTRO by el Ruben" } = Astro.props;
 ---
 
 <!doctype html>
@@ -14,12 +14,14 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title >{title}</title>
 	</head>
 	<body>
-		<slot />
+		<slot /> <!--En este slot se cargara pages/index -->
 	</body>
+	
 </html>
+
 <style is:global>
 	:root {
 		--accent: 136, 58, 234;
@@ -34,7 +36,7 @@ const { title } = Astro.props;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
+		background: #ccff00;
 	}
 	code {
 		font-family:

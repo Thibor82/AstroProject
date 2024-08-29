@@ -1,0 +1,21 @@
+---
+//1- tienen ":" llevan la siguiente sintaxis A:B (nombre:accion=valor) => class:list 
+//2- deben ser visibles para el compilador
+//3- No todas pueden tomar un valor customizado/personalizado
+  //<X class:load/> no se puede personalizar
+  //<X class:list/> se puede pasar un valor personalizado
+---
+
+<h1 class:list ={["adios hello"]}>Hello Astro</h1>
+
+<style>
+    .hello{
+        color:rgb(33, 218, 42);
+    }
+    .adios{
+        font-size:smaller
+    }
+    .seeyoulater{
+        background-color: brown;
+    }
+</style>
