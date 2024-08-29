@@ -1,6 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import HolaAstro from '../components/HolaAstro.astro';
+import AstroImagen from '../components/AstroImagen.astro';
+import mobileImg from "c:/users/ghua_/onedrive/escritorio/foto.webp"
+import desktopImg from "c:/users/ghua_/onedrive/escritorio/foto.webp"
+import PerfilAstro from '../components/PerfilAstro.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -33,7 +38,14 @@ import Card from '../components/Card.astro';
 				</linearGradient>
 			</defs>
 		</svg>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
+		<!--<h1>Welcome to <span class="text-gradient">My first Astro</span></h1>-->
+		<PerfilAstro name="Rubén" nickname="ghua">
+			<AstroImagen 
+			mobileImgUrl= {mobileImg}
+			desktopImgURL = {desktopImg}
+			alt="foto_usuario"
+		/>
+		</PerfilAstro>
 		<p class="instructions">
 			To get started, open the directory <code>src/pages</code> in your project.<br />
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
