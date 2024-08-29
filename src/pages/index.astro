@@ -1,8 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import Titulo from '../components/Titulo.astro';
-import Directivas from '../components/Directivas.astro'
+import Father from '../components/Father.astro';
 ---
 
 <Layout title="Index">
@@ -37,26 +36,17 @@ import Directivas from '../components/Directivas.astro'
 			</defs>
 		</svg>
 		
-		<!--<h1>Welcome to <span class="text-gradient">My first Astro</span></h1>-->
-		<Directivas />
-		
-		<Titulo  href="https://www.google.com" texto='Estas son las recetas que me salen de rechupete'>
-			<ol class:list={["seeyoulater adios"]}>
-				<li>
-					Ingredientes
-				</li>
-				<li>
-					Pasos
-				</li>
-			</ol>
-			
-		</Titulo>
-		
-		
+		<h1>Welcome to <span class="text-gradient">My first Astro</span></h1>
 		<p class="instructions">
 			To get started, open the directory <code>src/pages</code> in your project.<br />
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
 		</p>
+
+		<Father>
+			<p slot="third-line">bye!</p>
+
+			<p slot="first-line">Hola</p>
+		</Father>
 
 		<ul role="list" class="link-card-grid">
 			<Card
@@ -141,13 +131,4 @@ import Directivas from '../components/Directivas.astro'
 		padding: 0;
 	}
 
-	.hello{
-        color:rgb(33, 218, 42);
-    }
-    .adios{
-        font-size:smaller
-    }
-    .seeyoulater{
-        background-color: brown;
-    }
 </style>
