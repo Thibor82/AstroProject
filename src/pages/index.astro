@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Father from '../components/Father.astro';
+import Card_ClassList from '../components/Card_ClassList.astro';
+import ListaEnlaces from '../components/ListaEnlaces.astro';
+import CardP from '../components/CardP.astro';
 ---
 
 <Layout title="Index">
@@ -35,18 +38,28 @@ import Father from '../components/Father.astro';
 				</linearGradient>
 			</defs>
 		</svg>
-		
+		<CardP style="color:white" title="soy un componente" contenido="soy el primer componente de esta web"/>
+		<CardP style="color:brown" title="esto es un nuevo uso del componente" contenido="uso de nuevo el componente CardP"/>
+		<p style="color:green" title="Soy una etiqueta p">Soy el primer párrafo</p>
 		<h1>Welcome to <span class="text-gradient">My first Astro</span></h1>
 		<p class="instructions">
 			To get started, open the directory <code>src/pages</code> in your project.<br />
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
 		</p>
-
+		<ListaEnlaces h3Text="Hola, Ahora soy un componente" title="un enlace a goggle", alt="una immagen de perfil " />
 		<Father>
-			<p slot="third-line">bye!</p>
-
-			<p slot="first-line">Hola</p>
+			<li>Esta es otra linea sin slot</li>
+			<!--<li slot="third-line">Estoy trabajando con slots con nombre</li>
+			<li slot="first-line">Esta es la linea escrita en segundo lugar</li>-->
+			<li>Esto es una linea sin slot</li>
 		</Father>
+
+		<Card_ClassList client:visible={{rootMargin: "100px"}}
+				link="https://docs.astro.build/"
+				title="Documentation"
+				body="Learn how Astro works and explore the official API docs."
+		/>
+
 
 		<ul role="list" class="link-card-grid">
 			<Card
@@ -70,6 +83,11 @@ import Father from '../components/Father.astro';
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
 		</ul>
+		<Card_ClassList client:visible
+				link="https://docs.astro.build/"
+				title="Documentation"
+				body="Learn how Astro works and explore the official API docs."
+		/>
 	</main>
 </Layout>
 
