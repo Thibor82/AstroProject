@@ -1,0 +1,39 @@
+---
+interface Props{
+    classlist:string[],
+}
+
+const{classlist}=Astro.props
+---
+
+<div >
+    <button class:list={classlist}>
+        <slot />
+    </button>
+</div>
+<style>
+    .button{
+
+    }
+    .button:hover{
+        background-color: aqua;
+    }
+    .bgblue{
+        background-color: blue;
+        }
+    .bgorange{
+        background-color: orange;
+        }
+    .bgpink{
+        background-color: pink;
+    }
+    .txtcolor{
+        color:aliceblue;
+    }
+
+    .cursor{
+        cursor:pointer;
+        transition: background-color 0.3s;
+    }
+    
+</style>

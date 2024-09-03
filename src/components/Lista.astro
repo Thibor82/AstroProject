@@ -1,0 +1,22 @@
+---
+interface Props{
+    contenido:string[],
+    link:string[],
+    popup:string[],
+}
+const {contenido, link, popup}=Astro.props
+---
+
+<div>
+    <h2>{contenido[0]}</h2>
+    <ul>
+        <li><a href={link[0]} title={popup[0]}>{contenido[1]}</a></li>
+        <li><a href={link[1]} title={popup[1]}>{contenido[2]}</a></li>
+        <li><a href={link[2]} title={popup[2]}>{contenido[3]}</a></li>
+    </ul>
+</div>
+<style>
+    h2{
+        color:brown;
+    }
+</style>

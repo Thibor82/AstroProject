@@ -1,45 +1,37 @@
 ---
-// client:load -> prioridad alta, carga elementos (de UI) inmediatamente
-// de parte del cliente.
-// client:idle -> prioridad media, cargara por parte del cliente pero solo
-// lo hara una vez que el resto de elementos esten cargados.
-// client:visible -> prioridad baja, se cargaran al comenzar a ser visibles.
-// client:visible={{rootMargin: "200px"}}
+interface Props{
+    classlist:string[];
+    link:string;
+    popup:string;
+    contenido:string;
 
-
-interface Props {
-	title: string;
-	body: string;
-	link: string;
 }
-
-const { link, title, body } = Astro.props;
+const {link, popup, contenido, classlist}=Astro.props
 ---
-
-<li class:list={"link-card p h2"}>
-	<a href={link}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
-<style>
+<!-- <a href="https://google.com" title="Enlace a Google" value="Google"></a>-->
+  <a class:list={classlist} href={link} title={popup}><h2>{contenido}</h2></a>
+ <!-- <a class:list={[["link-card"], ['bg-color transicion'], {box:true}]} href={link} title={popup}><h2>{contenido}</h2></a>-->
+ <style>
 	.link-card {
 		list-style: none;
 		display: flex;
 		padding: 1px;
-		background-color: #487ffe;
+		
 		background-image: none;
 		background-size: 400%;
 		border-radius: 7px;
 		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 	}
+    .bgcolor{
+        background-color: #ffe11b;
+    }
+    .transicion{
+        transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .box{
+        box-shadow: inset 0 0 0 1px rgb(58, 157, 8);
+    }
 	.link-card > a {
 		width: 100%;
 		text-decoration: none;
@@ -55,7 +47,7 @@ const { link, title, body } = Astro.props;
 		font-size: 1.25rem;
 		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 	}
-	p {
+	.p {
 		margin-top: 0.5rem;
 		margin-bottom: 0;
 	}
